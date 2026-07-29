@@ -119,6 +119,14 @@
 >
 > Una vez dentro de la consola, asegúrate de seleccionar la **región correcta** en el desplegable de arriba a la derecha (la que indique tu profesor; en AWS Academy suele ser fija, p. ej. `us-east-1`). **Todos tus recursos deben estar en la misma región.**
 
+> [!example] 🎬 Antes de empezar (todavía SIN grabar, y luego arranca)
+> Ya conoces el método desde los prerrequisitos, así que va solo el recordatorio:
+> 1. **Crea la entrada de apuntes** de esta fase (`v3-fase-1-infraestructura-cloud-aws-ec2.md`) con su estructura, vacía.
+> 2. **Léete los 6 pasos** del procedimiento enteros, para no atascarte a mitad del vídeo.
+> 3. Ten **OBS** listo y comprueba **pantalla y micrófono**.
+>
+> Cuando lo tengas: **arranca la grabación, preséntate y muestra tu identidad**. A partir de ahí, **todo queda grabado** — incluido cualquier paso previo de preparación que venga a continuación.
+
 > [!example] Paso 1: Crear el Key Pair (tu llave de acceso)
 > Antes de crear la instancia, necesitas generar las claves de acceso SSH.
 >
