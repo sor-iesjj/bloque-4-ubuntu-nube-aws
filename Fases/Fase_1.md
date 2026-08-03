@@ -37,10 +37,10 @@
 > Instalar un servidor físico en la clase es caro (comprar hardware), requiere mantenimiento constante (electricidad, refrigeración, actualizaciones de seguridad), no es escalable (si necesitas 2 servidores, necesitas 2 máquinas), y es frágil: una inundación, un apagón o un accidente físico lo destruye. La nube resuelve esto.
 
 > [!success] Objetivo de esta Fase
-> Crear una **instancia EC2 en Amazon Web Services** que aloje Ubuntu Server 24.04 LTS. Este servidor será tu controlador de dominio, tu almacenamiento de archivos y la base de toda la infraestructura BoochanV3. Lo protegerás con un **Security Group (firewall cloud)** que bloquea internet y abre solo los puertos imprescindibles: 9090 para monitoreo, 22 para administración.
+> Crear una **instancia EC2 en Amazon Web Services** que aloje Ubuntu Server 26.04 LTS. Este servidor será tu controlador de dominio, tu almacenamiento de archivos y la base de toda la infraestructura BoochanV3. Lo protegerás con un **Security Group (firewall cloud)** que bloquea internet y abre solo los puertos imprescindibles: 9090 para monitoreo, 22 para administración.
 
 > [!tip] Hoja de Ruta
-> 1. Crear una instancia EC2 en AWS con Ubuntu Server 24.04 LTS (2 GB RAM mínimo)
+> 1. Crear una instancia EC2 en AWS con Ubuntu Server 26.04 LTS (2 GB RAM mínimo)
 > 2. Configurar el Security Group: abrir puertos 9090 (Cockpit) y 22 (SSH) — nada más
 > 3. Asignar una Elastic IP para tener una IP pública fija
 > 4. Conectarse al servidor por SSH desde tu PC (primera vez que entras)
@@ -88,7 +88,7 @@
 > [!important] 🔐 Dos credenciales distintas — no las confundas
 > En este proyecto convivirán **dos sistemas de acceso diferentes**, cada uno para su cosa:
 > - **La clave `.pem` (Key Pair):** solo sirve para **entrar por SSH al servidor Linux** (eres el administrador del sistema). Es criptografía asimétrica.
-> - **La contraseña del dominio (`P@ssword2026!`):** se usa más adelante (Fases 4-8) para los **usuarios de Active Directory** que iniciarán sesión en Windows. Es una contraseña normal porque así funciona el dominio.
+> - **La contraseña del dominio (`P@ssw0rd`):** se usa más adelante (Fases 4-8) para los **usuarios de Active Directory** que iniciarán sesión en Windows. Es una contraseña normal porque así funciona el dominio.
 >
 > Resumen: **llave `.pem` = administrar el servidor; contraseña = usuarios del dominio.** Son mundos separados.
 
@@ -184,7 +184,7 @@
 > | Campo | Valor |
 > | :--- | :--- |
 > | **Nombre** | `UbuntuServer` |
-> | **AMI (imagen)** | Busca `Ubuntu Server 24.04 LTS` → selecciona la versión de 64 bits (x86) |
+> | **AMI (imagen)** | Busca `Ubuntu Server 26.04 LTS` → selecciona la versión de 64 bits (x86). Si el texto no coincide palabra por palabra, coge la **LTS de 64 bits** que te ofrezca: AWS cambia la redacción cada pocos meses |
 > | **Tipo de instancia** | `t3.small` (2 vCPU, 2 GB RAM) |
 > | **Par de claves** | `boochan-key` (el que creaste en el Paso 1) |
 > | **Grupo de seguridad** | Selecciona el existente: `sg-boochan-[tunombre]` |
@@ -196,7 +196,7 @@
 > 3. Haz clic en **`Lanzar instancia`**. Espera 1-2 minutos hasta que el estado sea `En ejecución` (verde).
 >
 > > [!tip] 💡 ¿Qué es una AMI?
-> > Una AMI (Amazon Machine Image) es como la ISO de un sistema operativo, pero ya preparada para AWS. En lugar de instalar Ubuntu desde cero, AWS carga una "fotografía" del sistema en segundos. Ubuntu 24.04 LTS está disponible gratuitamente en AWS Marketplace.
+> > Una AMI (Amazon Machine Image) es como la ISO de un sistema operativo, pero ya preparada para AWS. En lugar de instalar Ubuntu desde cero, AWS carga una "fotografía" del sistema en segundos. Ubuntu 26.04 LTS está disponible gratuitamente en AWS Marketplace.
 
 > [!example] Paso 4: Asignar una Elastic IP
 > Sin una IP fija, tu instancia cambia de IP pública cada vez que se reinicia. La Elastic IP te da una IP permanente.

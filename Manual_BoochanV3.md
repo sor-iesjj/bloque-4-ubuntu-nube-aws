@@ -86,14 +86,14 @@ El detalle completo está al inicio de la **[Fase 1](Fases/Fase_1.md)**.
 | :--- | :--- |
 | **Nombre NetBIOS** | `BOOCHAN` |
 | **Realm (dominio completo)** | `BOOCHAN.SPACE` |
-| **Instancia del servidor** | `t3.medium` (2 vCPU, 4 GB RAM), Ubuntu Server 24.04 LTS |
+| **Instancia del servidor** | `t3.medium` (2 vCPU, 4 GB RAM), Ubuntu Server 26.04 LTS |
 | **AMI / imagen** | Ubuntu Server (catálogo oficial de AWS) |
 | **IP privada del servidor (VPC por defecto)** | `172.31.x.x` |
 | **IP pública** | Elastic IP (para SSH inicial y como `Endpoint` del túnel WireGuard) |
 | **Red del túnel VPN (WireGuard)** | `10.0.0.0/24` (servidor `10.0.0.1`, cliente del aula `10.0.0.2`) |
 | **Acceso / credenciales** | Usuario `ubuntu` + Key Pair `.pem` (SSH) |
 | **Firewall perimetral** | Security Group de AWS |
-| **Sistema operativo servidor** | Ubuntu Server 24.04 LTS (headless) |
+| **Sistema operativo servidor** | Ubuntu Server 26.04 LTS (headless) |
 | **Sistema operativo cliente** | Windows 11 (PC físico del aula) |
 | **Plataforma / coste** | AWS Academy Learner Lab (crédito educativo · Start Lab / End Lab) |
 
