@@ -132,17 +132,14 @@
 > # Instala git si no lo tienes aún
 > sudo apt install git -y
 > # Descarga el repositorio del proyecto en la carpeta /opt/boochan
-> git clone URL_DEL_REPOSITORIO /opt/boochan
+> sudo git clone https://github.com/sor-iesjj/bloque-4-ubuntu-nube-aws /opt/boochan
 > # Entra en la carpeta descargada
 > cd /opt/boochan
 > # Dale permiso de ejecución al script y ejecútalo
 > sudo chmod +x provision_boochan.sh
 > sudo ./provision_boochan.sh
 > ```
-> > [!caution] ⚠️ Antes de ejecutar: pide la URL al profesor (la de **V3 / AWS**)
-> > El texto `URL_DEL_REPOSITORIO` es un marcador de posición. **Sustitúyelo** por la URL real que te proporcione tu profesor antes de pulsar Enter. Si ejecutas el comando con ese texto literal, git devolverá un error inmediato.
-> >
-> > **Asegúrate de clonar el repositorio de BoochanV3 (AWS).** El script `provision_boochan.sh` de V3 y el de la versión antigua V2 (Azure) se parecen, pero clonar el equivocado puede arrastrar configuración pensada para otro entorno. Ante la duda, confirma con el profesor que la URL corresponde a **V3**.
+
 >
 > El script tardará **2-3 minutos**. Verás mensajes de progreso en pantalla.
 >
